@@ -28,6 +28,12 @@ let btnBeli = document.querySelectorAll(".btnBeli > button");
 
 for (let index = 0; index < btnBeli.length; index++) {
     btnBeli[index].onclick = () => {
-        cart.push(btnBeli[index].dataset["id"]);
+        // cart.push(btnBeli[index].dataset["id"]);
+        tblproduk.filter(function (a) {
+            if (a.idproduk == btnBeli[index].dataset["id"]) {
+                cart.push(a);
+                console.log(cart);
+            }
+        })
     }
 }
